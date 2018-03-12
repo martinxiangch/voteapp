@@ -1,0 +1,38 @@
+<div class="btn-group" dropdown>
+    <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
+        Number<span class="caret"></span>
+    </button>
+    <ul *dropdownMenu class="dropdown-menu" role="menu">
+        <li *ngFor="let vote of voteNumbers" role="menuitem">
+            <a class="dropdown-item" href="#" (click)="selected(vote)">{{vote}}</a>
+        </li>
+    </ul>
+</div>
+<div class="btn-group" dropdown>
+    <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
+        FontSize<span class="caret"></span>
+    </button>
+    <ul *dropdownMenu class="dropdown-menu" role="menu">
+        <li role="menuitem" *ngFor="let size of sizeList">
+            <a class="dropdown-item" href="#" (click)="selectsize(size)">{{size}}</a>
+        </li>
+    </ul>
+</div>
+<div class="btn-group" dropdown>
+    <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
+        FontBorder<span class="caret"></span>
+    </button>
+    <ul *dropdownMenu class="dropdown-menu" role="menu">
+        <li role="menuitem" *ngFor="let item of weightList">
+            <a class="dropdown-item" href="#" (click)="selectweight(item)">{{item}}</a>
+        </li>
+    </ul>
+</div>
+
+<div class="row">
+    <div class="center-block" style="width:400px;text-align: center;">
+        <div [ngStyle]="{'font-size': fontSize+'px','font-weight':fontWeight}">
+            {{selectedNumber}}
+        </div>
+    </div>
+</div>
